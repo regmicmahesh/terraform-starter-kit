@@ -1,0 +1,15 @@
+repos:
+- repo: https://github.com/antonbabenko/pre-commit-terraform
+  rev: v1.71.0
+  hooks:
+    - id: terraform_fmt
+    - id: terraform_docs
+    - id: terraform_validate
+
+- repo: local
+  hooks:
+    - id: terraform_gen
+      name: terraform_gen
+      entry: bash -c './do gen'
+      language: system
+      pass_filenames: false
